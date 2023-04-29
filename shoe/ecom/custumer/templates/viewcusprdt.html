@@ -1,0 +1,20 @@
+<h1 class="text-center">View Product</h1>
+
+{% extends 'nav.html' %}
+{% block nav %}
+    <div class="row">
+      {% for product in products %}
+    <div class="col">
+    <div class="card" style="width: 12rem;">
+      <img class="card-img-top" src="{{product.imageURL}}" alt="Card image cap">
+      <div class="card-body">
+        <h3 class="card-title">{{product.productname}}</h3>
+        <h5 class="card-text">₹ {{product.price}}</h5>
+        <!-- <p class="card-text">{{product.description}}</p> -->
+        <a href="{% url 'addcart' product.id%} " class="btn btn-success">View Product</a>
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+{% endblock nav %}

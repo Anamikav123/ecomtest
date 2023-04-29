@@ -1,0 +1,24 @@
+
+{% extends 'nav.html' %}
+{% load static %}
+{% block nav %}
+    
+    <div>
+            <div class="card-body">
+                <div class="card" style="width: 20rem;">
+                <img class="card-img-top" src="{{pro.imageURL}}" alt="Card image cap">
+
+                <h4>{{pro.productname}}</h4>
+                <h5>₹{{pro.price}}</h5>
+                <p>{{pro.description}}</p>
+            </div>
+        </div>
+        </div>
+  
+    <form action="" method="post">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button class="btn-success">Add To Cart</button>
+        
+    </form>
+{% endblock nav %}
